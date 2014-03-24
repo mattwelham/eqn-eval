@@ -1,5 +1,7 @@
-#include "Equations.h"
+#include "Main.h"
 using namespace std;
+
+
 
 int convertCoEfficient( string element )
 {
@@ -32,3 +34,4 @@ string convertVariableName( string element )
 
 	return variableName;
 }
+
