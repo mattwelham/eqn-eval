@@ -15,3 +15,4 @@ string convertVariableName( string element );
 
 // nodetype.cpp
 bool isVariable( string element );
+bool isOperator( string element );

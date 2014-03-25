@@ -24,24 +24,41 @@ void evalStrEquation(string strEquation)
 
 	vector<string>::const_iterator iter;
 
-	vector<unique_ptr<BaseNode>> vtrNodeEquation;
+	//a vector that contains pointers to all nodes in the equation
+	vector<BaseNode*> vtrNodeEquation;
+
+	//a vector that stores all variable nodes
+	vector<VarNode> vtrVarStore;
 
 	//iterate through the elements in the string equation vector
 	for(iter = vtrStrEquation.begin(); iter != vtrStrEquation.end(); ++iter)
 	{
-		if( isVariable( *iter ))
+
+		if( isOperator( *iter ))
 		{
-		unique_ptr<VarNode> var(new VarNode);
-		var->intCoEfficient = convertCoEfficient( *iter );
-		var->varName = convertVariableName( *iter );
-		vtrNodeEquation.push_back(var); //THIS NEEDS FIXING
+		OpNode oper;
+		OpNode* poper = &oper;
+		oper.charOp = iter->at(0);
+		//add current operator to the equation
+		vtrNodeEquation.push_back(poper);
 		}
 
-		cout << var.intCoEfficient << ' ';
-		cout << var.varName << "\n";
-
+		else if( isVariable( *iter ))
+		{
+		//THIS NEEDS TO BE DELETED
+		VarNode* pVar = new VarNode;
+		pVar->intCoEfficient = convertCoEfficient( *iter );
+		pVar->varName = convertVariableName( *iter );
 		//add current co-efficient and variable to the equation
-		vtrVarEquation.push_back(var);
+		vtrNodeEquation.push_back(pVar);
+		vtrVarStore.push_back(*pVar);
+		}
+		
+	}
+	for(vector<BaseNode*>::iterator it = vtrNodeEquation.begin(); it != vtrNodeEquation.end(); it++) 
+	{
+	//CAUSES A DEBUG ASSERTION FAILURE?
+    delete *it;
 	}
 }
 

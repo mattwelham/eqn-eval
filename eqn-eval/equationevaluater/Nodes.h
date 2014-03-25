@@ -1,6 +1,8 @@
 #include "Include.h"
 using namespace std;
 
+//Node Structure is based off of: http://math.hws.edu/eck/cs225/s03/binary_trees/
+
 class BaseNode
 {
 public:
@@ -31,11 +33,12 @@ public:
 
 class OpNode : public BaseNode
 {
-	char charOp; //The operator type
 	BaseNode *nodeLeft; //The left node
 	BaseNode *nodeRight; //The right node
 
 	public:
+
+	char charOp; //The operator type
 
 	int value()
 	{

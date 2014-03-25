@@ -12,3 +12,21 @@ bool isVariable( string element )
 	}
 	return true;
 }
+
+bool isOperator( string element )
+{
+	if( element.size() == 1)
+	{
+		switch(element.at(0))
+		{
+		case '/':
+		case '*':
+		case '-':
+		case '+':
+		case '^':
+			return true;
+		}
+	}
+
+	return false;
+}
