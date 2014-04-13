@@ -30,3 +30,21 @@ bool isOperator( string element )
 
 	return false;
 }
+
+bool isOpenBracket( string element )
+{
+	if( element.size() == 1 && element == "(")
+	{
+		return true;
+	}
+	return false;
+}
+
+bool isCloseBracket( string element )
+{
+	if( element.size() == 1 && element == ")")
+	{
+		return true;
+	}
+	return false;
+}

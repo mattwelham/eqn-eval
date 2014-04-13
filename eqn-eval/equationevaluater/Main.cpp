@@ -7,7 +7,10 @@ const int SCREEN_HEIGHT = 480;
 
 int main(int argc, char* args[])
 {
-	evalStrEquation(inputEQN());
+	vector<string> vtrStrEquation = createVtrStrEquation((inputEQN()));
+	Equation equation;
+	equation = evalVtrStrEquation(vtrStrEquation);
+	deleteNodes(equation);
 
     SDL_Init(SDL_INIT_EVERYTHING);
  

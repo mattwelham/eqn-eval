@@ -1,5 +1,7 @@
+#ifndef NODES
+#define NODES
+
 #include "Include.h"
-using namespace std;
 
 //Node Structure is based off of: http://math.hws.edu/eck/cs225/s03/binary_trees/
 
@@ -7,6 +9,7 @@ class BaseNode
 {
 public:
 	virtual int value() = 0;
+	virtual std::string print() = NULL;
 };
 
 class VarNode : public BaseNode
@@ -14,15 +17,25 @@ class VarNode : public BaseNode
 public:
 
 	int intCoEfficient;
-	float fltCoEfficient;
+//	float fltCoEfficient;
 	int intVarValue;
-	string varName;
+	std::string varName;
 
 	VarNode()
 	{
 		intCoEfficient = 1;
-		fltCoEfficient = 1;
+//		fltCoEfficient = 1;
 		intVarValue = 1;
+	}
+
+	std::string print()
+	{
+		std::string strPrint;
+		std::stringstream ss;
+		ss << intCoEfficient;
+		ss << varName;
+		ss >> strPrint;
+		return strPrint;
 	}
 
 	int value()
@@ -40,6 +53,16 @@ class OpNode : public BaseNode
 
 	char charOp; //The operator type
 
+	std::string print()
+	{
+		std::string strPrint;
+		std::stringstream ss;
+		ss << charOp;
+		ss >> strPrint;
+		return strPrint;
+	}
+
+
 	int value()
 	{
 		int leftValue = nodeLeft->value();
@@ -54,3 +77,31 @@ class OpNode : public BaseNode
 		}
 	}
 };
+
+class BracketNode : public BaseNode
+{
+	public:
+
+	Equation contents;
+
+	std::string print()
+	{
+		std::string strPrint;
+		std::stringstream ss;
+		std::vector<BaseNode*>::iterator iter;
+		for(iter = contents.vtrNodeEquation.begin(); iter != contents.vtrNodeEquation.end(); ++iter)
+		{
+			ss << (*iter)->print();
+			ss << ' ';
+		}
+		ss >> strPrint;
+		return strPrint;
+	}
+
+	int value()
+	{
+		return 0;
+	}
+};
+
+#endif

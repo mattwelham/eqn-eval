@@ -30,15 +30,21 @@
     <ClCompile Include="NodeType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ExpTreeCreation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Nodes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Nodes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

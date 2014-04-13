@@ -68,6 +68,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ExpTreeCreation.cpp" />
     <ClCompile Include="NodeType.cpp" />
     <ClCompile Include="Split.cpp" />
     <ClCompile Include="StringEvaluation.cpp" />
@@ -78,6 +79,7 @@
     <ClInclude Include="Include.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Nodes.h" />
+    <ClInclude Include="Structures.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

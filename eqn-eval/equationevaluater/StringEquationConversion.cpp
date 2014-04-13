@@ -35,3 +35,34 @@ string convertVariableName( string element )
 	return variableName;
 }
 
+Equation identifyBracketContents( vector<string> vtrStrEquation)
+{
+		vector<string>::iterator iter;
+		Equation bracketEquation;
+		int bracketIndentLevel = 0;
+		for(iter = vtrStrEquation.begin() + 1; iter != vtrStrEquation.end(); ++iter)
+		{
+
+			if( isOpenBracket( *iter ))
+			{
+				bracketIndentLevel++;
+			}
+
+			else if( isCloseBracket( *iter ))
+			{
+				if(bracketIndentLevel < 1)
+				{
+					vector<string> vtrStrBracketEquation(vtrStrEquation.begin() + 1, iter - 1);
+					bracketEquation = evalVtrStrEquation(vtrStrBracketEquation);
+					bracketEquation.eqnLength = vtrStrBracketEquation.size();
+					return bracketEquation;
+				}
+
+				else
+				{
+					bracketIndentLevel--;
+				}
+			}
+		}
+
+}
