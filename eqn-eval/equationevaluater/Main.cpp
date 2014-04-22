@@ -10,7 +10,10 @@ int main(int argc, char* args[])
 	vector<string> vtrStrEquation = createVtrStrEquation((inputEQN()));
 	Equation equation;
 	equation = evalVtrStrEquation(vtrStrEquation);
-	deleteNodes(equation);
+//	deleteNodes(equation);
+	ExpressionTree eqnTree;
+	eqnTree.createTree(equation);
+	cout << eqnTree.value();
 
     SDL_Init(SDL_INIT_EVERYTHING);
  
@@ -49,7 +52,6 @@ int main(int argc, char* args[])
 		SDL_Delay(1); 
 		
 	}
-//	inputCoEfficients(inputEQNOrder());
 	
 	SDL_DestroyRenderer(renderer);
 

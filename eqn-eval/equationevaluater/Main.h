@@ -1,12 +1,11 @@
-#ifndef STRUCTS
-#define STRUCTS
+#ifndef MAIN
+#define MAIN
 
 #include "Include.h"
-#include "Structures.h"
-#include "Nodes.h"
+#include "Structs.h"
+#include "Tree.h"
 
 //stringevaluation.cpp
-struct Equation;
 std::string inputEQN();
 std::vector<std::string> createVtrStrEquation(std::string strEquation);
 Equation evalVtrStrEquation(std::vector<std::string> vtrStrEquation);

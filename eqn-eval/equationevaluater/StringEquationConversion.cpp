@@ -52,9 +52,8 @@ Equation identifyBracketContents( vector<string> vtrStrEquation)
 			{
 				if(bracketIndentLevel < 1)
 				{
-					vector<string> vtrStrBracketEquation(vtrStrEquation.begin() + 1, iter - 1);
+					vector<string> vtrStrBracketEquation(vtrStrEquation.begin() + 1, iter);
 					bracketEquation = evalVtrStrEquation(vtrStrBracketEquation);
-					bracketEquation.eqnLength = vtrStrBracketEquation.size();
 					return bracketEquation;
 				}
 

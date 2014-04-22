@@ -50,9 +50,10 @@ Equation evalVtrStrEquation(vector<string> vtrStrEquation)
 		bracket->contents = identifyBracketContents( vtrStrBracketEquation );				//idenify and create seperate equation for bracket contents
 		equation.vtrNodeEquation.push_back(bracket);										//add reference to current bracket node to the equation
 		equation.vtrBracketStore.push_back(*bracket);										//add current bracket node object to vector so it doesn't go out of scope
-		iter += (bracket->contents.eqnLength + 2);
+		iter += (bracket->contents.eqnLength + 1);
 		}
 	}
+	equation.eqnLength = equation.vtrNodeEquation.size();
 	return equation;
 }
 

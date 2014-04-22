@@ -13,6 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2D79FE4C-03BC-4D99-87C2-D23339CB96E4}</ProjectGuid>
     <RootNamespace>sdldemo</RootNamespace>
+    <ProjectName>2nd Term Project</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -68,18 +69,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ExpTreeCreation.cpp" />
+    <ClCompile Include="BracketNode.cpp" />
+    <ClCompile Include="OpNode.cpp" />
+    <ClCompile Include="ExpressionTree.cpp" />
     <ClCompile Include="NodeType.cpp" />
     <ClCompile Include="Split.cpp" />
     <ClCompile Include="StringEvaluation.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="StringEquationConversion.cpp" />
+    <ClCompile Include="VarNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h" />
     <ClInclude Include="Main.h" />
-    <ClInclude Include="Nodes.h" />
-    <ClInclude Include="Structures.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="Structs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
