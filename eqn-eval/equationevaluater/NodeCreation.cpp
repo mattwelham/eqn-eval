@@ -23,14 +23,14 @@ void CreateVarNode(Equation* pEquation, string varString)
 
 	for(varNameIterator = pEquation->vtrStrVarList.begin(); varNameIterator != pEquation->vtrStrVarList.end(); ++varNameIterator)
 	{
-		if(var->varName == *varNameIterator)
+		if(var->varName == *varNameIterator || var->varName == "")
 		{
 			isInVarList = true;
 			namePosition = varNameIterator - pEquation->vtrStrVarList.begin();
 		}
 	}
 
-	if( isInVarList == false )
+	if( isInVarList == false && var->varName != "")
 	{
 		pEquation->vtrStrVarList.push_back(var->varName);
 		vector<VarNode*> newVarListStore;
@@ -40,7 +40,10 @@ void CreateVarNode(Equation* pEquation, string varString)
 
 	else
 	{
+		if(var->varName != "" )
+		{
 		pEquation->vtrVtrVarListStore.at(namePosition).push_back(var);
+		}
 	}
 
 }

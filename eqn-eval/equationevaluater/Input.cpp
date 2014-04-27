@@ -41,7 +41,7 @@ vector<VarNode*> inputConstantValues( Equation equation )
 
 		}
 	}
-	else
+	else if(equation.vtrStrVarList.size() == 1)
 	{
 		returnVector = equation.vtrVtrVarListStore.at(0);
 	}

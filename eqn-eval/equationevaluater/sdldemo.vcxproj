@@ -71,6 +71,7 @@
   <ItemGroup>
     <ClCompile Include="BracketNode.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="GraphMain.cpp" />
     <ClCompile Include="NodeCreation.cpp" />
     <ClCompile Include="OpNode.cpp" />
     <ClCompile Include="ExpressionTree.cpp" />
@@ -80,6 +81,7 @@
     <ClCompile Include="StringEvaluation.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="StringEquationConversion.cpp" />
+    <ClCompile Include="Validation.cpp" />
     <ClCompile Include="VarNode.cpp" />
   </ItemGroup>
   <ItemGroup>

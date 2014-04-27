@@ -5,7 +5,7 @@ VarNode::VarNode()
 {
 	type = VARIABLE;
 	intCoEfficient = 1;
-	intVarValue = 4;
+	intVarValue = 1;
 }
 
 string VarNode::print()

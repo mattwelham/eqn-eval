@@ -7,7 +7,24 @@ vector<string> createVtrStrEquation(string strEquation)
 {
 	vector<string> vtrStrEquation;
 	//split raw string equation into elements in a string vector with a delimiter of ' '
-	vtrStrEquation = split(strEquation, ' ');
+	vtrStrEquation = splitexclude(strEquation, ' ');
+
+	char delims[7] = {'+', '-', '/', '*', '^', '(', ')'};
+	for(int i = 0; i < 7; i++)
+	{
+		vector<string>::iterator vtrStrIterator;
+
+		for(vtrStrIterator = vtrStrEquation.begin(); vtrStrIterator != vtrStrEquation.end(); ++vtrStrIterator)
+		{
+			if(*vtrStrIterator != string(1,delims[i]))
+			{
+			vector<string> vtrStrTemp = splitinclude(*vtrStrIterator, delims[i]);
+			vtrStrIterator = vtrStrEquation.insert(vtrStrIterator, vtrStrTemp.begin(), vtrStrTemp.end());
+			vtrStrIterator += (vtrStrTemp.size() - 1);
+			vtrStrEquation.erase(vtrStrIterator + 1);
+			}
+		}
+	}
 	return vtrStrEquation;
 }
 

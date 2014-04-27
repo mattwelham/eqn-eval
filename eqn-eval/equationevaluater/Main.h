@@ -5,6 +5,9 @@
 #include "Structs.h"
 #include "Tree.h"
 
+//graphmain.cpp
+void graphMain();
+
 //input.cpp
 std::string inputStrEQN();
 std::vector<VarNode*> inputConstantValues( Equation equation );
@@ -16,8 +19,8 @@ Equation evalVtrStrEquation(std::vector<std::string> vtrStrEquation);
 void deleteNodes(Equation equation);
 
 //split.cpp
-std::vector<std::string> &split(const std::string &s, char delim, std::vector<std::string> &elems);
-std::vector<std::string> split(const std::string &s, char delim);
+std::vector<std::string> splitexclude(const std::string &s, char delim);
+std::vector<std::string> splitinclude(const std::string &s, char delim);
 
 //stringequationconversion.cpp
 int convertCoEfficient( std::string element );
@@ -34,7 +37,11 @@ bool isCloseBracket( std::string element );
 void CreateOpNode(Equation* pEquation, std::string opString);
 void CreateVarNode(Equation* pEquation, std::string varString);
 
-//rendering
+//rendering.cpp
  void renderExpressionTree (SDL_Renderer* renderer, int scrWidth, int scrHeight, ExpressionTree expTree, std::vector<VarNode*> indVar, int* range);
+
+//validation.cpp
+bool validateEquation(Equation equation);
+bool validateVarOrder(Equation equation);
 
 #endif
