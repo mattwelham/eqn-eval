@@ -80,7 +80,7 @@ public:
 
 	int value();
 
-	OpNode* root;
+	BaseNode* root;
 
 	void evalBranch( OpNode* stemNode );
 	OpNode* createBranch(Equation equation);

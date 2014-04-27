@@ -7,13 +7,16 @@ const int SCREEN_HEIGHT = 480;
 
 int main(int argc, char* args[])
 {
-	vector<string> vtrStrEquation = createVtrStrEquation((inputEQN()));
+	vector<string> vtrStrEquation = createVtrStrEquation((inputStrEQN()));
+	int* range = inputRange();
 	Equation equation;
 	equation = evalVtrStrEquation(vtrStrEquation);
 //	deleteNodes(equation);
 	ExpressionTree eqnTree;
 	eqnTree.createTree(equation);
-	cout << eqnTree.value();
+//	cout << eqnTree.value();
+	vector<VarNode*> indVar = inputConstantValues(equation);
+
 
     SDL_Init(SDL_INIT_EVERYTHING);
  
@@ -45,7 +48,7 @@ int main(int argc, char* args[])
 		
 //		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 //		SDL_RenderDrawLine(renderer, x, y, x2, y2);
-
+		renderExpressionTree(renderer, SCREEN_WIDTH, SCREEN_HEIGHT, eqnTree, indVar, range);
 
 
 		SDL_RenderPresent(renderer);

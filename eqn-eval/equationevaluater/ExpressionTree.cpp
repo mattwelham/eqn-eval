@@ -11,7 +11,15 @@ ExpressionTree::ExpressionTree()
 void ExpressionTree::createTree( Equation equation )
 {
 	root = createBranch(equation);
-	evalBranch( root );
+	if(root != false)
+	{
+	OpNode* rootOpPtr = static_cast<OpNode*>(root);
+	evalBranch( rootOpPtr );
+	}
+	else
+	{
+		root = equation.vtrNodeEquation.at(0);
+	}
 }
 
 

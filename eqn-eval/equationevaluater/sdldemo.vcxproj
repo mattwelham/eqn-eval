@@ -70,9 +70,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BracketNode.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="NodeCreation.cpp" />
     <ClCompile Include="OpNode.cpp" />
     <ClCompile Include="ExpressionTree.cpp" />
-    <ClCompile Include="NodeType.cpp" />
+    <ClCompile Include="NodeIdentification.cpp" />
+    <ClCompile Include="Rendering.cpp" />
     <ClCompile Include="Split.cpp" />
     <ClCompile Include="StringEvaluation.cpp" />
     <ClCompile Include="Main.cpp" />
